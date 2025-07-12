@@ -1,84 +1,80 @@
-✅ README.md for IndicPhotoOcr
-markdown
+# IndicPhotoOCR
+
+**IndicPhotoOCR** is a multilingual scene-text recognition system built for extracting text from natural scene images in Indian languages, such as Hindi and English.  
+This project was developed during my internship under the guidance of **Mr. Anik De**.
+
+---
+
+## 📁 Project Structure
+
+IndicPhotoOCR/
+├── Annotated_Dataset/ # JSON annotations with polygon coordinates and language labels
+├── Annotated_images/ # Images with polygon-marked text regions
+├── Evaluation/ # Contains evaluation scripts and data
+├── Ocr_result/ # Output JSON/CSV from OCR
+├── Raw_images/ # Raw input images
+├── Script/ # Core OCR and analysis scripts
+├── LICENSE # MIT License
+├── README.md # Project documentation
+
+yaml
 Copy
 Edit
-# IndicPhotoOcr - Scene Text Recognition in Indian Scripts 🇮🇳
 
-This project demonstrates the use of the [IndicPhotoOCR](https://github.com/AI4Bharat/IndicPhotoOCR) pipeline to detect and recognize text in natural scene images containing Indian scripts. It includes annotations, OCR outputs, evaluation, and scripts.
+---
 
-## 🗂️ Project Structure
+## 🚀 Features
 
-IndicPhotoOcr/
-├── Annotated_Dataset/ # JSON files with polygon annotations & script labels
-├── Annotated_images/ # Input images with visual annotation overlays
-├── Raw_images/ # Original images without annotation
-├── Ocr_result/ # OCR output (results.json, predictions.csv, etc.)
-├── Script/ # Python scripts used to run OCR, compare, save outputs
-├── Evaluations.xlsx # Evaluation sheet with accuracy, mismatch stats
-└── README.md # This file
+- ✅ Script-aware text recognition for Indian languages (e.g., Hindi, English)
+- ✅ Word-wise OCR with bounding polygon detection
+- ✅ Auto language/script detection for each text region
+- ✅ Results exported in JSON and CSV format
+- ✅ Evaluation metrics included (WRR, Accuracy)
 
-markdown
+---
+
+## ⚙️ Installation
+
+```bash
+git clone https://github.com/Bhashini-IITJ/IndicPhotoOCR.git
+cd IndicPhotoOCR
+pip install -r requirements.txt
+🛠️ Usage
+Run OCR on a single image:
+
+python
 Copy
 Edit
+from IndicPhotoOCR.ocr import OCR
 
-## 📝 Workflow Summary
+ocr_system = OCR(verbose=True, identifier_lang="auto", device="cpu")
+words = ocr_system.ocr("c:/Users/User/Downloads/IndicPhotoOcr/img.jpg")
+Batch OCR over a folder:
 
-1. **Image Collection**  
-   Scene images collected locally containing multilingual text (e.g., shop boards, banners).
-
-2. **Annotation**  
-   Annotated using Label Studio. Saved polygons and labels in `Annotated_Dataset/`.
-
-3. **OCR Pipeline**  
-   Used [IndicPhotoOCR](https://github.com/AI4Bharat/IndicPhotoOCR) to:
-   - Detect text regions
-   - Identify script
-   - Recognize text
-
-4. **Results**  
-   OCR output stored in `Ocr_result/` as:
-   - `results.json` (script + recognized text per image)
-   - `predictions.csv` (optional CSV output)
-
-5. **Evaluation**  
-   Compared OCR predictions with ground-truth annotations and compiled stats in `Evaluations.xlsx`.
-
-## 🔁 How to Re-run OCR
-
-1. Place new images in `Raw_images/`
-2. Run the script in `Script/`:
-   ```bash
-   python Script/run_on_folder.py
-Output will be saved in Ocr_result/
-
-✅ Example OCR Output Format (JSON)
-json
+bash
 Copy
 Edit
-{
-  "IMG_001.jpg": [
-    {
-      "script": "Hindi",
-      "text": "दक्षिण बिहार ग्रामीण बैंक"
-    },
-    {
-      "script": "English",
-      "text": "hostel admission open"
-    }
-  ]
-}
-📈 Evaluation
-Accuracy and other comparison metrics between predictions and annotations are documented in:
+python run_on_folder.py
 
-Copy
-Edit
-Evaluations.xlsx
-🧠 Model & Tools Used
-Model: IndicPhotoOCR
+📊 Results and Analysis
+The OCR system was evaluated on a set of annotated images across multiple scripts.
 
-Annotation: Label Studio
+Language	Recognition Accuracy	Word Recognition Rate (WRR)
+Hindi	   73.9%	       0.737
+English	77.5%	       0.775
+Overall	77.7%	       0.757
 
-Language Detection: Automatic via built-in script classifier
+🔍 Observations
+Hindi script detection was also effective despite script complexity.
 
-📌 Credits
-IndicPhotoOCR: Developed by AI4Bharat
+WRR shows the system's ability to match ground truth at word level across both languages.
+
+🙏 Acknowledgements
+Internship Guide: Mr. Anik De
+Annotation Platform: Label Studio
+
+📄 License
+This project is licensed under the MIT License
+
+🔗 Repository Link
+🔗 GitHub: https://github.com/Bhashini-IITJ/IndicPhotoOCR
