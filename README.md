@@ -36,7 +36,7 @@ Edit
 ## ⚙️ Installation
 
 ```bash
-git clone https://github.com/Bhashini-IITJ/IndicPhotoOCR.git
+git clone https://github.com/Amit-Narayan/IndicPhotoOcr
 cd IndicPhotoOCR
 pip install -r requirements.txt
 🛠️ Usage
@@ -60,9 +60,9 @@ python run_on_folder.py
 The OCR system was evaluated on a set of annotated images across multiple scripts.
 
 Language	Recognition Accuracy	Word Recognition Rate (WRR)
-Hindi	   73.9%	       0.737
-English	77.5%	       0.775
-Overall	77.7%	       0.757
+Hindi	      73.9%	                 0.737
+English	      77.5%	                 0.775
+Overall	      77.7% 	             0.757
 
 🔍 Observations
 Hindi script detection was also effective despite script complexity.
