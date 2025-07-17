@@ -1,7 +1,7 @@
 # IndicPhotoOCR
 
 **IndicPhotoOCR** is a multilingual scene-text recognition system built for extracting text from natural scene images in Indian languages, such as Hindi and English.  
-This project was developed during my internship under the guidance of **Mr. Anik De**.
+This project was developed during my internship under the guidance of **Mr. Anik De** and supervision of **Dr. Anand Mishra**.
 
 ---
 
@@ -36,7 +36,7 @@ Edit
 ## ⚙️ Installation
 
 ```bash
-git clone https://github.com/Amit-Narayan/IndicPhotoOcr
+git clone https://github.com/Bhashini-IITJ/IndicPhotoOCR
 cd IndicPhotoOCR
 pip install -r requirements.txt
 🛠️ Usage
@@ -71,10 +71,13 @@ WRR shows the system's ability to match ground truth at word level across both l
 
 🙏 Acknowledgements
 Internship Guide: Mr. Anik De
-Annotation Platform: Label Studio
+Faculty Supervisor: Dr. Anand Mishra
+Annotation Platform: Label Studio(https://labelstud.io/)
 
 📄 License
 This project is licensed under the MIT License
 
 🔗 Repository Link
 🔗 GitHub: https://github.com/Bhashini-IITJ/IndicPhotoOCR
+
+⭐ If you find this project useful, please consider giving it a star on GitHub!
